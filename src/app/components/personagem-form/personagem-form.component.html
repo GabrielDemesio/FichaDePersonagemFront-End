@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()">
+  <label>
+    Nome:
+    <input [(ngModel)]="personagem.name" name="nome" required>
+  </label>
+  <label>
+    Classe:
+    <input [(ngModel)]="personagem.classe" name="classe" required>
+  </label>
+  <label>
+    Nível:
+    <input [(ngModel)]="personagem.nivel" name="nivel" type="number" required>
+  </label>
+  <label>
+    Raça:
+    <input [(ngModel)]="personagem.raca" name="raca" required>
+  </label>
+  <button type="submit">Salvar</button>
+</form>

@@ -1,0 +1,21 @@
+<h2>Lista de Personagens</h2>
+<ul>
+  <li *ngFor="let personagem of personagens">
+    <strong>ID:</strong> {{ personagem.id }} <br>
+    <strong>Nome:</strong> {{ personagem.name }} <br>
+    <strong>Classe:</strong> {{ personagem.classe }} <br>
+    <strong>Nível:</strong> {{ personagem.nivel }} <br>
+    <strong>Raça:</strong> {{ personagem.raca }} <br>
+    <strong>forca:</strong> {{ personagem.raca }} <br>
+    <strong>destreza:</strong> {{ personagem.raca }} <br>
+    <strong>inteligencia:</strong> {{ personagem.raca }} <br>
+    <strong>carisma:</strong> {{ personagem.raca }} <br>
+    <strong>vida:</strong> {{ personagem.raca }} <br>
+    <strong>energia:</strong> {{ personagem.raca }} <br>
+    <strong>mana:</strong> {{ personagem.raca }} <br>
+    <strong>experiencia:</strong> {{ personagem.raca }} <br>
+
+    <hr>
+  </li>
+</ul>
+<p *ngIf="personagens.length === 0">Nenhum personagem encontrado.</p>
