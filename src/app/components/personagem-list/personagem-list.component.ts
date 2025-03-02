@@ -22,10 +22,14 @@ export class PersonagemListComponent implements OnInit {
   carregarPersonagens(): void {
     this.personagemService.getPersonagens().subscribe(
       (data) => {
-        this.personagens = data; // Atribui os dados recebidos à propriedade personagens
-        console.log('Dados recebidos:', data); // Log para depuração
+        this.personagens = data.map(personagem => ({ ...personagem, mostrarDetalhes: false }));
+        console.log('Dados recebidos:', data);
       },
       (error) => console.error('Erro ao carregar personagens', error)
     );
+  }
+
+  toggleDetalhes(personagem: Personagem): void {
+    personagem.mostrarDetalhes = !personagem.mostrarDetalhes;
   }
 }

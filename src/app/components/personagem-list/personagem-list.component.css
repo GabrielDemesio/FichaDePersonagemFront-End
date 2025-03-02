@@ -1,0 +1,89 @@
+body {
+  font-family: 'MedievalSharp', cursive;
+  background-color: #1e1e1e;
+  color: #5a3a22;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5em;
+  text-align: center;
+  color: #5a3a22;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+li {
+  background-image: url('/src/app/assets/pergaminho.png');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #5a3a22;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+li::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: rgba(90, 58, 34, 0.1);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(90, 58, 34, 0.6);
+}
+
+.personagem-header {
+  font-size: 1.5em;
+  color: #5a3a22;
+  margin-bottom: 10px;
+}
+
+.personagem-detalhes {
+  margin-top: 10px;
+  padding: 15px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 1px solid #5a3a22;
+}
+
+.personagem-detalhes p {
+  margin: 5px 0;
+  font-size: 1.1em;
+  color: #3a2a1a;
+}
+
+strong {
+  color: #5a3a22;
+}
+
+hr {
+  border: 1px solid #5a3a22;
+  margin: 10px 0;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2em;
+  color: #5a3a22;
+}

@@ -1,6 +1,6 @@
 export interface Personagem {
   id: number;
-  name: string;
+  nome: string;
   classe: string;
   raca:string;
   nivel: number;
@@ -12,4 +12,5 @@ export interface Personagem {
   vida: number;
   energia: number;
   mana: number;
+  mostrarDetalhes?: boolean;
 }

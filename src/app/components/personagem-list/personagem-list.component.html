@@ -1,21 +1,26 @@
 <h2>Lista de Personagens</h2>
 <ul>
-  <li *ngFor="let personagem of personagens">
-    <strong>ID:</strong> {{ personagem.id }} <br>
-    <strong>Nome:</strong> {{ personagem.name }} <br>
-    <strong>Classe:</strong> {{ personagem.classe }} <br>
-    <strong>Nível:</strong> {{ personagem.nivel }} <br>
-    <strong>Raça:</strong> {{ personagem.raca }} <br>
-    <strong>forca:</strong> {{ personagem.raca }} <br>
-    <strong>destreza:</strong> {{ personagem.raca }} <br>
-    <strong>inteligencia:</strong> {{ personagem.raca }} <br>
-    <strong>carisma:</strong> {{ personagem.raca }} <br>
-    <strong>vida:</strong> {{ personagem.raca }} <br>
-    <strong>energia:</strong> {{ personagem.raca }} <br>
-    <strong>mana:</strong> {{ personagem.raca }} <br>
-    <strong>experiencia:</strong> {{ personagem.raca }} <br>
-
-    <hr>
+  <li *ngFor="let personagem of personagens" (click)="toggleDetalhes(personagem)">
+    <div class="personagem-header">
+      <strong>{{ personagem.nome }}</strong> - {{ personagem.classe }}
+    </div>
+    <div *ngIf="personagem.mostrarDetalhes" class="personagem-detalhes">
+      <p><strong><i class="fas fa-id-card"></i> ID:</strong> {{ personagem.id }}</p>
+      <p><strong><i class="fas fa-user"></i> Nome:</strong> {{ personagem.nome }}</p>
+      <p><strong><i class="fas fa-hat-wizard"></i> Classe:</strong> {{ personagem.classe }}</p>
+      <p><strong><i class="fas fa-level-up-alt"></i> Nível:</strong> {{ personagem.nivel }}</p>
+      <p><strong><i class="fas fa-dragon"></i> Raça:</strong> {{ personagem.raca }}</p>
+      <p><strong><i class="fas fa-fist-raised"></i> Força:</strong> {{ personagem.forca }}</p>
+      <p><strong><i class="fas fa-running"></i> Destreza:</strong> {{ personagem.destreza }}</p>
+      <p><strong><i class="fas fa-brain"></i> Inteligência:</strong> {{ personagem.inteligencia }}</p>
+      <p><strong><i class="fas fa-comments"></i> Carisma:</strong> {{ personagem.carisma }}</p>
+      <p><strong><i class="fas fa-heart"></i> Vida:</strong> {{ personagem.vida }}</p>
+      <p><strong><i class="fas fa-bolt"></i> Energia:</strong> {{ personagem.energia }}</p>
+      <p><strong><i class="fas fa-magic"></i> Mana:</strong> {{ personagem.mana }}</p>
+      <p><strong><i class="fas fa-star"></i> Experiência:</strong> {{ personagem.experiencia }}</p>
+    </div>
   </li>
 </ul>
 <p *ngIf="personagens.length === 0">Nenhum personagem encontrado.</p>
+
+
