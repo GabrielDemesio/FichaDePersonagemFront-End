@@ -1,8 +1,8 @@
 export interface Personagem {
   id: number;
   nome: string;
-  classe: string;
   raca:string;
+  classe: string;
   nivel: number;
   experiencia: number;
   forca: number;

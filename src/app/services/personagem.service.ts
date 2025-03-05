@@ -8,6 +8,7 @@ import { Personagem } from '../models/personagem.model';
 })
 export class PersonagemService {
   private apiUrl = '/api/personagens';
+  private apiUrlRegister = '/api/register';
 
   constructor(private http: HttpClient) {}
 
@@ -20,7 +21,7 @@ export class PersonagemService {
   }
 
   createPersonagem(personagem: Personagem): Observable<Personagem> {
-    return this.http.post<Personagem>(this.apiUrl, personagem);
+    return this.http.post<Personagem>(this.apiUrlRegister, personagem);
   }
 
   updatePersonagem(id: number, personagem: Personagem): Observable<Personagem> {

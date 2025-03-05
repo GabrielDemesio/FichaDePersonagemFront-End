@@ -1,35 +1,52 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Personagem } from '../../models/personagem.model';
+import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {HttpErrorResponse} from '@angular/common/http';
+import {Personagem} from '../../models/personagem.model';
+import {PersonagemService} from '../../services/personagem.service';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-personagem-form',
   templateUrl: './personagem-form.component.html',
   imports: [
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   styleUrls: ['./personagem-form.component.css']
 })
 export class PersonagemFormComponent {
-  @Input() personagem: Personagem = {
-    id: 0,
-    name: '',
-    classe: '',
-    nivel: 1,
-    raca: '',
-    forca: 10,
-    destreza: 10,
-    inteligencia: 10,
+  showForm = false;
+
+  personagem: Personagem = {
+    carisma: 0,
+    destreza: 0,
+    energia: 0,
     experiencia: 0,
-    vida: 100,
-    carisma: 10,
-    energia: 10,
-    mana: 10
+    forca: 0,
+    id: 0,
+    inteligencia: 0,
+    mana: 0,
+    nivel: 0,
+    raca: '',
+    vida: 0,
+    nome: '',
+    classe: ''
   };
 
-  @Output() salvar = new EventEmitter<Personagem>();
+  constructor(private personagemService: PersonagemService) {}
 
-  onSubmit(): void {
-    this.salvar.emit(this.personagem);
+  toggleForm() {
+    this.showForm = !this.showForm;
+  }
+
+  onSubmit() {
+    this.personagemService.createPersonagem(this.personagem).subscribe(
+      response => {
+        console.log('Personagem criado com sucesso', response);
+      },
+      error => {
+        console.error('Erro ao criar personagem', error);
+      }
+    );
   }
 }

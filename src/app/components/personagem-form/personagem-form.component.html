@@ -1,19 +1,64 @@
-<form (ngSubmit)="onSubmit()">
-  <label>
-    Nome:
-    <input [(ngModel)]="personagem.name" name="nome" required>
-  </label>
-  <label>
-    Classe:
-    <input [(ngModel)]="personagem.classe" name="classe" required>
-  </label>
-  <label>
-    Nível:
-    <input [(ngModel)]="personagem.nivel" name="nivel" type="number" required>
-  </label>
-  <label>
-    Raça:
-    <input [(ngModel)]="personagem.raca" name="raca" required>
-  </label>
-  <button type="submit">Salvar</button>
+<form (ngSubmit)="onSubmit()" #personagemForm="ngForm">
+  <div>
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" [(ngModel)]="personagem.nome" name="nome" required />
+  </div>
+  <div>
+    <label for="raca">Raça</label>
+    <input type="text" id="raca" [(ngModel)]="personagem.raca" name="experiencia" required />
+  </div>
+
+  <div>
+    <label for="classe">Classe</label>
+    <input type="text" id="classe" [(ngModel)]="personagem.classe" name="classe" required />
+  </div>
+
+  <div>
+    <label for="nivel">Nivel</label>
+    <input type="number" id="nivel" [(ngModel)]="personagem.nivel" name="raca" required />
+  </div>
+
+  <div>
+    <label for="experiencia">Experiência</label>
+    <input type="number" id="experiencia" [(ngModel)]="personagem.experiencia" name="experiencia" required />
+  </div>
+
+  <div>
+    <label for="forca">Força</label>
+    <input type="number" id="forca" [(ngModel)]="personagem.forca" name="nivel" required />
+  </div>
+
+  <div>
+    <label for="destreza">destreza</label>
+    <input type="number" id="destreza" [(ngModel)]="personagem.destreza" name="nivel" required />
+  </div>
+
+  <div>
+    <label for="inteligencia">inteligencia</label>
+    <input type="number" id="inteligencia" [(ngModel)]="personagem.inteligencia" name="nivel" required />
+  </div>
+
+  <div>
+    <label for="carisma">carisma</label>
+    <input type="number" id="carisma" [(ngModel)]="personagem.carisma" name="nivel" required />
+  </div>
+
+  <div>
+    <label for="vida">vida</label>
+    <input type="number" id="vida" [(ngModel)]="personagem.vida" name="nivel" required />
+  </div>
+
+  <div>
+    <label for="energia">energia</label>
+    <input type="number" id="energia" [(ngModel)]="personagem.energia" name="nivel" required />
+  </div>
+  <div>
+    <label for="mana">mana</label>
+    <input type="number" id="mana" [(ngModel)]="personagem.mana" name="nivel" required />
+  </div>
+
+
+
+
+  <button type="submit" [disabled]="!personagemForm.valid">Criar Personagem</button>
 </form>
