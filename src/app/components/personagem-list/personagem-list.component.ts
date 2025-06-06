@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PersonagemService } from '../../services/personagem.service';
 import { Personagem } from '../../models/personagem.model';
 import {CommonModule} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-personagem-list',
@@ -13,10 +14,14 @@ import {CommonModule} from '@angular/common';
 export class PersonagemListComponent implements OnInit {
   personagens: Personagem[] = [];
 
-  constructor(private personagemService: PersonagemService) {}
+  constructor(private personagemService: PersonagemService, private router: Router) {} // Injete no construtor
 
   ngOnInit(): void {
     this.carregarPersonagens();
+  }
+
+  navigateToCreateCharacter() {
+    this.router.navigate(['/novo-personagem']);
   }
 
   carregarPersonagens(): void {

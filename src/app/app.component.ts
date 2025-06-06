@@ -4,7 +4,7 @@ import {PersonagemFormComponent} from './components/personagem-form/personagem-f
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, PersonagemFormComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

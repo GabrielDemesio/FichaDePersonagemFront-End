@@ -4,6 +4,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 import {Personagem} from '../../models/personagem.model';
 import {PersonagemService} from '../../services/personagem.service';
 import {CommonModule} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-personagem-form',
@@ -33,20 +34,33 @@ export class PersonagemFormComponent {
     classe: ''
   };
 
-  constructor(private personagemService: PersonagemService) {}
+  creationSuccess = false;
+  successMessage: string | null = null;
+  errorMessage: string | null = null;
+
+  constructor(private personagemService: PersonagemService, private router: Router) {}
 
   toggleForm() {
     this.showForm = !this.showForm;
   }
 
   onSubmit() {
-    this.personagemService.createPersonagem(this.personagem).subscribe(
-      response => {
+    this.successMessage = null;
+    this.errorMessage = null;
+
+    this.personagemService.createPersonagem(this.personagem).subscribe({
+      next: (response) => {
         console.log('Personagem criado com sucesso', response);
+        this.successMessage = `Personagem "${response.nome}" foi forjado na batalha!`;
+        this.creationSuccess = true; // 4. Altera a flag para mostrar o botão "Voltar"
       },
-      error => {
+      error: (error) => {
         console.error('Erro ao criar personagem', error);
+        this.errorMessage = 'A magia falhou! Verifique os dados e tente novamente.';
       }
-    );
+    });
+  }
+  voltarParaLista(): void {
+    this.router.navigate(['/']);
   }
 }

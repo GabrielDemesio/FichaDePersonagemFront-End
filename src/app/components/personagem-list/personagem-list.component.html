@@ -1,11 +1,13 @@
+<button (click)="navigateToCreateCharacter()">Criar Novo Personagem</button>
+
 <h2>Lista de Personagens</h2>
+
 <ul>
   <li *ngFor="let personagem of personagens" (click)="toggleDetalhes(personagem)">
     <div class="personagem-header">
       <strong>{{ personagem.nome }}</strong> - {{ personagem.classe }}
     </div>
     <div *ngIf="personagem.mostrarDetalhes" class="personagem-detalhes">
-      <p><strong><i class="fas fa-id-card"></i> ID:</strong> {{ personagem.id }}</p>
       <p><strong><i class="fas fa-user"></i> Nome:</strong> {{ personagem.nome }}</p>
       <p><strong><i class="fas fa-hat-wizard"></i> Classe:</strong> {{ personagem.classe }}</p>
       <p><strong><i class="fas fa-level-up-alt"></i> Nível:</strong> {{ personagem.nivel }}</p>
