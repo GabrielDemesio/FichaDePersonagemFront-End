@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
-/* Botão principal de Criar Novo Herói */
 .create-new-btn {
-  display: block; /* Para poder aplicar margem */
-  margin: 0 auto 40px auto; /* Centraliza e adiciona espaço abaixo */
+  display: block;
+  margin: 0 auto 40px auto;
   max-width: 300px;
 }
 
-/* Estilo da lista de personagens */
 ul {
   list-style-type: none;
   padding: 0;
@@ -17,8 +15,8 @@ ul {
 }
 
 li {
-  background-color: #fdf5e6; /* Fundo de pergaminho */
-  color: #5a3a22; /* Texto marrom */
+  background-color: #fdf5e6;
+  color: #5a3a22;
   padding: 15px 20px;
   margin-bottom: 15px;
   border: 2px solid #8B4513;
@@ -27,14 +25,14 @@ li {
   display: flex; /* Para alinhar o botão de editar */
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Permite que o conteúdo quebre a linha em telas pequenas */
+  flex-wrap: wrap;
 }
 
 .personagem-info {
   font-family: 'MedievalSharp', cursive;
   font-size: 1.4em;
   cursor: pointer;
-  flex-grow: 1; /* Faz com que o nome ocupe o espaço disponível */
+  flex-grow: 1;
 }
 
 .detalhes {
@@ -42,9 +40,9 @@ li {
   border-top: 2px dashed #d2b48c;
   padding: 15px;
   margin-top: 15px;
-  width: 100%; /* Ocupa toda a largura do <li> */
+  width: 100%;
   color: #3a2a1a;
-  cursor: default; /* Remove o cursor de ponteiro da área de detalhes */
+  cursor: default;
 }
 
 .detalhes ul {
@@ -60,10 +58,9 @@ li {
   padding: 5px 0;
   margin: 0;
   font-size: 1.1em;
-  display: list-item; /* Garante que se comporte como um item de lista normal */
+  display: list-item;
 }
 
-/* ESTILOS DE BOTÃO COPIADOS DO FORMULÁRIO */
 .btn {
   padding: 10px 20px;
   font-family: 'Cinzel', serif;
@@ -73,11 +70,11 @@ li {
   cursor: pointer;
   transition: all 0.2s ease;
   border: 2px solid transparent;
-  white-space: nowrap; /* Evita que o texto do botão quebre linha */
+  white-space: nowrap;
 }
 
 .btn-primary {
-  background-color: #5a3a22; /* Cor principal */
+  background-color: #5a3a22;
   color: #fdf5e6;
   border-color: #3a2a1a;
 }
@@ -97,13 +94,11 @@ li {
   color: #fdf5e6;
 }
 
-/* Versão menor do botão para ações como "Editar" */
 .btn-small {
   padding: 5px 12px;
   font-size: 0.9em;
 }
 
-/* Mensagens de feedback */
 .feedback-message, .error-message {
   text-align: center;
   font-size: 1.5em;
