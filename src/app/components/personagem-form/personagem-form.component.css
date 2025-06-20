@@ -1,90 +1,78 @@
-/* Container do formulário */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* Estilo do formulário (seu design original de pergaminho) */
 form {
   max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fdf5e6; /* Cor de pergaminho */
+  border: 3px solid #8B4513; /* Borda marrom escura */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  font-family: 'Georgia', serif;
 }
 
-/* Títulos e labels */
-label {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-  display: block;
-  color: #333;
-}
-
-h2 {
-  font-size: 1.8rem;
+fieldset {
+  border: 2px dashed #d2b48c; /* Borda tracejada cor de areia */
+  border-radius: 5px;
   margin-bottom: 20px;
-  text-align: center;
-  color: #333;
+  padding: 20px;
 }
 
-/* Estilos de input */
+legend {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.8em;
+  color: #5a3a22;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #3a2a1a;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+select {
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  background-color: #fffaf0; /* Cor de fundo do campo */
+  border: 1px solid #d2b48c;
   border-radius: 4px;
-  font-size: 1rem;
   box-sizing: border-box;
+  font-size: 1em;
+  color: #333;
 }
 
 input[type="text"]:focus,
-input[type="number"]:focus {
-  border-color: #4caf50;
+input[type="number"]:focus,
+select:focus {
   outline: none;
+  border-color: #8B4513;
+  box-shadow: 0 0 5px #d2b48c;
 }
 
-/* Botão de submit */
-button[type="submit"] {
-  background-color: #4caf50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
+/* NOVA SEÇÃO DE BOTÕES ABAIXO */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 1.1rem;
-  width: 100%;
-  transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #45a049;
-}
-
-/* Desabilitar o botão se o formulário estiver inválido */
-button[type="submit"]:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* Espaçamento entre os campos */
-div {
-  margin-bottom: 15px;
-}
-
-/* Resposta de sucesso ou erro */
-.success-message {
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border-radius: 4px;
-  margin-top: 15px;
-  text-align: center;
-}
-
-.error-message {
-  padding: 10px;
-  background-color: #f44336;
-  color: white;
-  border-radius: 4px;
-  margin-top: 15px;
-  text-align: center;
+  transition: all 0.2s ease;
 }

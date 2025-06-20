@@ -8,7 +8,7 @@ import { Personagem } from '../models/personagem.model';
 })
 export class PersonagemService {
   private apiUrl = '/api/personagens';
-  private apiUrlRegister = '/api/register';
+  private apiAiUrl = '/api/ai'; // URL base para a IA
 
   constructor(private http: HttpClient) {}
 
@@ -21,7 +21,7 @@ export class PersonagemService {
   }
 
   createPersonagem(personagem: Personagem): Observable<Personagem> {
-    return this.http.post<Personagem>(this.apiUrlRegister, personagem);
+    return this.http.post<Personagem>(this.apiUrl, personagem);
   }
 
   updatePersonagem(id: number, personagem: Personagem): Observable<Personagem> {
@@ -30,5 +30,10 @@ export class PersonagemService {
 
   deletePersonagem(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  // NOVO MÉTODO PARA CHAMAR A IA NO BACKEND
+  gerarHistoria(dados: { nome: string, raca: string, classe: string }): Observable<{ historia: string }> {
+    return this.http.post<{ historia: string }>(`${this.apiAiUrl}/gerar-historia`, dados);
   }
 }

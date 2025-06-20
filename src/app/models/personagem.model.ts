@@ -1,7 +1,7 @@
 export interface Personagem {
   id: number;
   nome: string;
-  raca:string;
+  raca: string;
   classe: string;
   nivel: number;
   experiencia: number;
@@ -10,7 +10,8 @@ export interface Personagem {
   inteligencia: number;
   carisma: number;
   vida: number;
-  energia: number;
   mana: number;
+  energia: number;
+  historia?: string; // <-- CAMPO ADICIONADO
   mostrarDetalhes?: boolean;
 }

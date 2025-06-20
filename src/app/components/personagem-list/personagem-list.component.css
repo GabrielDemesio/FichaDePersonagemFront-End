@@ -1,20 +1,14 @@
-body {
-  font-family: 'MedievalSharp', cursive;
-  background-color: #1e1e1e;
-  color: #5a3a22;
-  margin: 0;
-  padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* Botão principal de Criar Novo Herói */
+.create-new-btn {
+  display: block; /* Para poder aplicar margem */
+  margin: 0 auto 40px auto; /* Centraliza e adiciona espaço abaixo */
+  max-width: 300px;
 }
 
-h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 2.5em;
-  text-align: center;
-  color: #5a3a22;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
-}
-
+/* Estilo da lista de personagens */
 ul {
   list-style-type: none;
   padding: 0;
@@ -23,67 +17,95 @@ ul {
 }
 
 li {
-  background-image: url("/assets/pergaminho.jpg");
-  background-size: cover;
-  background-position: center;
-  border: 2px solid #5a3a22;
-  border-radius: 10px;
-  padding: 20px;
+  background-color: #fdf5e6; /* Fundo de pergaminho */
+  color: #5a3a22; /* Texto marrom */
+  padding: 15px 20px;
   margin-bottom: 15px;
+  border: 2px solid #8B4513;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  display: flex; /* Para alinhar o botão de editar */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que o conteúdo quebre a linha em telas pequenas */
+}
+
+.personagem-info {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1.4em;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  position: relative;
-  overflow: hidden;
+  flex-grow: 1; /* Faz com que o nome ocupe o espaço disponível */
 }
 
-li::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  background: rgba(90, 58, 34, 0.1);
-  z-index: -1;
-  border-radius: 15px;
-}
-
-li:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 15px rgba(90, 58, 34, 0.6);
-}
-
-.personagem-header {
-  font-size: 1.5em;
-  color: #5a3a22;
-  margin-bottom: 10px;
-}
-
-.personagem-detalhes {
-  margin-top: 10px;
+.detalhes {
+  background-color: #f5e8d3;
+  border-top: 2px dashed #d2b48c;
   padding: 15px;
-  background-color: transparent;
-  border-radius: 8px;
-  border: 1px solid #5a3a22;
-}
-
-.personagem-detalhes p {
-  margin: 5px 0;
-  font-size: 1.1em;
+  margin-top: 15px;
+  width: 100%; /* Ocupa toda a largura do <li> */
   color: #3a2a1a;
+  cursor: default; /* Remove o cursor de ponteiro da área de detalhes */
 }
 
-strong {
+.detalhes ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.detalhes li {
+  font-family: 'Georgia', serif;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 5px 0;
+  margin: 0;
+  font-size: 1.1em;
+  display: list-item; /* Garante que se comporte como um item de lista normal */
+}
+
+/* ESTILOS DE BOTÃO COPIADOS DO FORMULÁRIO */
+.btn {
+  padding: 10px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  white-space: nowrap; /* Evita que o texto do botão quebre linha */
+}
+
+.btn-primary {
+  background-color: #5a3a22; /* Cor principal */
+  color: #fdf5e6;
+  border-color: #3a2a1a;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #3a2a1a;
+}
+
+.btn-secondary {
+  background-color: transparent;
   color: #5a3a22;
+  border-color: #5a3a22;
 }
 
-hr {
-  border: 1px solid #5a3a22;
-  margin: 10px 0;
+.btn-secondary:hover {
+  background-color: #5a3a22;
+  color: #fdf5e6;
 }
 
-p {
+/* Versão menor do botão para ações como "Editar" */
+.btn-small {
+  padding: 5px 12px;
+  font-size: 0.9em;
+}
+
+/* Mensagens de feedback */
+.feedback-message, .error-message {
   text-align: center;
-  font-size: 1.2em;
-  color: #5a3a22;
+  font-size: 1.5em;
+  color: #fdf5e6;
 }
