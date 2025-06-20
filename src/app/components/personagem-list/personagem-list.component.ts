@@ -26,7 +26,6 @@ export class PersonagemListComponent implements OnInit {
     this.router.navigate(['/novo-personagem']);
   }
 
-  // NOVO MÉTODO PARA NAVEGAR PARA A EDIÇÃO
   navigateToEdit(id: number): void {
     this.router.navigate(['/personagem', id, 'editar']);
   }

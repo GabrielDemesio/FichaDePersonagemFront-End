@@ -12,6 +12,6 @@ export interface Personagem {
   vida: number;
   mana: number;
   energia: number;
-  historia?: string; // <-- CAMPO ADICIONADO
+  historia?: string;
   mostrarDetalhes?: boolean;
 }

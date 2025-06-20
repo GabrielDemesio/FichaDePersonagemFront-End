@@ -27,7 +27,7 @@ export class PersonagemFormComponent implements OnInit {
   public creationSuccess = false;
   public successMessage: string | null = null;
   public errorMessage: string | null = null;
-  public isGerandoHistoria = false; // Flag para o loading da IA
+  public isGerandoHistoria = false;
 
   constructor(
     private personagemService: PersonagemService,
@@ -61,7 +61,6 @@ export class PersonagemFormComponent implements OnInit {
 
   onSubmit() {
     if (this.isEditMode && this.personagemId) {
-      // --- LÓGICA DE ATUALIZAÇÃO ---
       this.personagemService.updatePersonagem(this.personagemId, this.personagem).subscribe({
         next: () => {
           alert('Personagem atualizado com sucesso!');
@@ -73,7 +72,6 @@ export class PersonagemFormComponent implements OnInit {
         }
       });
     } else {
-      // --- LÓGICA DE CRIAÇÃO ---
       this.personagemService.createPersonagem(this.personagem).subscribe({
         next: (response) => {
           this.successMessage = `Personagem "${response.nome}" foi forjado na batalha!`;
@@ -87,7 +85,6 @@ export class PersonagemFormComponent implements OnInit {
     }
   }
 
-  // LÓGICA PARA GERAR A HISTÓRIA
   gerarHistoria(): void {
     if (!this.personagem.nome || !this.personagem.raca || !this.personagem.classe) {
       alert('Por favor, preencha Nome, Raça e Classe antes de gerar a história.');
@@ -119,7 +116,6 @@ export class PersonagemFormComponent implements OnInit {
   criarNovo(): void {
     this.creationSuccess = false;
     this.router.navigate(['/novo-personagem']);
-    // Simplesmente resetamos o estado
     this.personagem = {
       carisma: 0, destreza: 0, energia: 0, experiencia: 0,
       forca: 0, id: 0, inteligencia: 0, mana: 0,

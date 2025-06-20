@@ -1,19 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
-/* Estilo do formulário (seu design original de pergaminho) */
 form {
   max-width: 600px;
   margin: 40px auto;
   padding: 30px;
-  background-color: #fdf5e6; /* Cor de pergaminho */
-  border: 3px solid #8B4513; /* Borda marrom escura */
+  background-color: #fdf5e6;
+  border: 3px solid #8B4513;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   font-family: 'Georgia', serif;
 }
 
 fieldset {
-  border: 2px dashed #d2b48c; /* Borda tracejada cor de areia */
+  border: 2px dashed #d2b48c;
   border-radius: 5px;
   margin-bottom: 20px;
   padding: 20px;
@@ -42,7 +41,7 @@ select {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  background-color: #fffaf0; /* Cor de fundo do campo */
+  background-color: #fffaf0;
   border: 1px solid #d2b48c;
   border-radius: 4px;
   box-sizing: border-box;
@@ -58,7 +57,6 @@ select:focus {
   box-shadow: 0 0 5px #d2b48c;
 }
 
-/* NOVA SEÇÃO DE BOTÕES ABAIXO */
 
 .form-actions {
   display: flex;
