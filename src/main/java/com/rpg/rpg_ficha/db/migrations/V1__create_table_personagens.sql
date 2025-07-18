@@ -1,0 +1,1 @@
+sql CREATE TABLE IF NOT EXISTS character_model ( id BIGINT AUTO_INCREMENT PRIMARY KEY, carisma INT, classe VARCHAR(255), destreza INT, energia INT, experiencia INT, forca INT, inteligencia INT, mana INT, nivel INT, nome VARCHAR(255), raca VARCHAR(255), vida INT );
